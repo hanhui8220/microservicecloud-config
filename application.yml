@@ -4,7 +4,7 @@
     - dev
 ---
 spring:
-  profiles: dev   #开发环境   测试github
+  profiles: dev   #开发环境   测试github1111111
   application:
     name: microservicecloud-config-dev
 
