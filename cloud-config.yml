@@ -1,10 +1,11 @@
-spring:
-  profiles: dev
-  application:
-    name: consumer-7001
 
 server:
   port: 7001
+
+spring:
+  profiles:
+    active:
+    - dev
   
 feign:
   hystrix:
@@ -16,14 +17,16 @@ eureka:
     service-url:
       defaultZone: http://127.0.0.1:9001/eureka/   # 注册中心地址
       
----      
-spring:
-  profiles: test
-  application:
-    name: consumer-7002
+      
+---
 
 server:
   port: 7002
+
+spring:
+  profiles:
+    active:
+    - test
   
 feign:
   hystrix:
@@ -33,4 +36,4 @@ eureka:
   client:
     register-with-eureka: false
     service-url:
-      defaultZone: http://127.0.0.1:9001/eureka/   # 注册中心地址     
+      defaultZone: http://127.0.0.1:9001/eureka/   # 注册中心地址
