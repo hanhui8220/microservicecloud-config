@@ -1,11 +1,16 @@
 
-server:
-  port: 7001
-
 spring:
   profiles:
     active:
     - dev
+---
+spring:
+  application:
+    name: config-7001
+  profiles: dev
+   
+server:
+  port: 7001
   
 feign:
   hystrix:
@@ -20,13 +25,13 @@ eureka:
       
 ---
 
-server:
-  port: 7002
-
 spring:
-  profiles:
-    active:
-    - test
+  application:
+    name: config-7002
+  profiles: test
+ 
+server:
+  port: 7002 
   
 feign:
   hystrix:
